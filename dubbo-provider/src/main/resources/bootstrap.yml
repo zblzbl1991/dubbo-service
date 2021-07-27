@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: spring-cloud-alibaba-dubbo-provider
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+dubbo:
+  scan:
+#    # dubbo 服务扫描基准包
+    base-packages: com.zbl.dubbo.service
+  protocol:
+    # dubbo 协议
+    name: dubbo
+    # dubbo 协议端口（ -1 表示自增端口，从 20880 开始）
+    port: -1
+  registry:
+    # 挂载到 Spring Cloud 注册中心
+    address: spring-cloud://localhost
